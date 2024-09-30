@@ -126,4 +126,4 @@ if __name__ == "__main__":
     print(f"Hostname: {hostname}")
     print(f"IP Address: {ip_address}")
 
-    app.run(host="0.0.0.0", port=8050)
+    app.run(host="0.0.0.0", port=80)
