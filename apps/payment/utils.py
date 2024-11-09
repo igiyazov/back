@@ -7,8 +7,7 @@ from django.conf import settings
 
 def generate_link() -> str:
     random_id = generate_random_id(10)
-    url = urljoin(settings.BASE_URL, settings.CHECK_URL)
-    link = set_query_parameter(url, "id", random_id)
+    link = set_query_parameter(settings.CHECK_URL, "id", random_id)
     return link
 
 
