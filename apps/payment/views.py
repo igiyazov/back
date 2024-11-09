@@ -25,7 +25,7 @@ def check_link(request):
     global val
     val += 1
     if val % 10 == 0:
-        return Response({"status": "OK", "pay_link": f"http://localhost:8000/pay/check_link/{method}", "check": val, "id": request.query_params['id']}, status=status.HTTP_200_OK)
+        return Response({"status": "OK", "pay_link": f"/pay/check_link/{method}", "check": val, "id": request.query_params['id']}, status=status.HTTP_200_OK)
     return Response(
         {"status": "PENDING", "check": val, "id": request.query_params['id']},
         status=status.HTTP_202_ACCEPTED
