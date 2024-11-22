@@ -17,7 +17,7 @@ def get_link(request):
     method = request.query_params.get("method")
     link = generate_link()
 
-    return Response({"status": 1, "check_link": link}, status=status.HTTP_202_ACCEPTED)
+    return Response({"status": 1, "link": link}, status=status.HTTP_202_ACCEPTED)
 
 
 @api_view(['GET'])
@@ -25,7 +25,7 @@ def check_link(request):
     global val
     val += 1
     if val % 10 == 0:
-        return Response({"status": 2, "pay_link": f"/pay/pay_link/{method}", "check": val, "id": request.query_params['id']}, status=status.HTTP_200_OK)
+        return Response({"status": 2, "link": f"/pay/pay_link/{method}", "check": val, "id": request.query_params['id']}, status=status.HTTP_200_OK)
     return Response(
         {"status": 3, "check": val, "id": request.query_params['id']},
         status=status.HTTP_202_ACCEPTED
